@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+.big{
+    width: 400px;   
+    height: 200px;
+}
+.small img{
+    width: 200px;
+    height: 100px;
+}
+</style>
+<body>
+    <div>
+        <img src="./img/1.jpeg" alt="" class="big">
+    </div>
+    <div class="small">
+        <img src="./img/1.jpeg" alt="">
+        <img src="./img/2.jpeg" alt="">
+        <img src="./img/3.jpeg" alt="">
+        <img src="./img/4.jpeg" alt="">
+        <img src="./img/5.jpg" alt="">
+    </div>
+
+    <script>
+    let imgs = document.getElementsByTagName('img');
+
+    for(let i = 1;i < imgs.length;i++){
+        imgs[i].onmouseover = function(){
+            imgs[0].src = this.src;
+          
+            
+        }
+       
+        
+    }
+    
+    </script>
+</body>
+</html>

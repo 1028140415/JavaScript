@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #prompt{
+        font-size: 12px;
+        color: darkgray;
+    }
+    #score{
+        border: 1px solid #000000;
+    }
+    .right{
+        
+        height: 10px;
+        width: 5px;
+        background-color: lightgreen !important;
+        padding-left: 20px;
+    }
+    .error{
+        
+        height: 10px;
+        width: 5px;
+        background-color: red;
+        padding-left: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <label for="score">您的成绩</label>
+        <input type="text" placeholder="请输入分数" id="score">
+        <span id="prompt">请输入您的分数</span>
+
+    </div>
+    <script>
+        function $(id){
+            return typeof id ==='string' ? document.getElementById(id):null;
+        }
+        $('score').onblur = function(){
+            var value = parseFloat(this.value);
+            console.log(typeof value);
+            console.log(isNaN(value));
+            if(isNaN(value)){
+                $('prompt').innerHTML = '输入的成绩不正确';
+                $('prompt').className = 'error';
+                this.style.borderColor = 'red'
+            }else if(value >= 0 && value <= 100){
+                $('prompt').innerHTML = '输入的成绩正确';
+                $('prompt').className = 'right';
+                this.style.borderColor = 'lightgreen'
+            }else{
+                $('prompt').innerHTML = '输入的必须是0到100之间';
+                $('prompt').className = 'error';
+                this.style.borderColor = 'red'
+            }
+            
+        }
+        $('score').onfocus = function(){
+            $('prompt').innerHTML = '请输入你的成绩';
+            $('prompt').className = '';
+            $('score').style.borderColor = 'darkgray';
+            $('score').style.outline = 'none';
+            $('score').value = '';
+        }
+    </script>
+</body>
+</html>

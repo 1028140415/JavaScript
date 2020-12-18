@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #qe_code{
+        /* width: 180px;
+        height: 160px; */
+        position: relative;
+        background-color: red;
+    }
+    #qe_code img{
+        position: absolute;
+        right: 0;
+    }
+    #qe_code #close{
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #e0e0e0;
+        text-align: center;
+        line-height: 18px;
+        cursor: pointer;
+        color: #666;
+    }
+    </style>
+</head>
+<body>
+    <div id="qe_code">
+        <img src="img/1.jpeg" alt="" id="code" height="200" width="400">
+        <span id="close">X</span>
+    </div>
+
+
+    <script>
+    // let colseSpan = document.getElementById('close');
+    // let qe_code = document.getElementById('qe_code');
+    // colseSpan.onclick = function(){
+    //     qe_code.style.display = 'none'
+    // }
+    let c = document.querySelector('#close');
+    let q = document.querySelector('#qe_code');
+
+     c.onclick = function(){
+         q.style.display = 'none'
+     }
+    </script>
+
+    
+</body>
+</html>

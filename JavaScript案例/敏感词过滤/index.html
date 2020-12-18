@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #area,#rs{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+    }
+
+
+</style>
+<body>
+    <h2>敏感词过滤</h2>
+    <p>
+        <textarea name="" id="area" cols="30" rows="10"></textarea>
+    </p>
+
+    <p>
+        <input type="submit" value="发布" id="input">
+    </p>
+    <p id="res"></p>
+
+
+    <script>
+    let area =  document.querySelector('#area');
+    let input = document.querySelector('#input');
+    let res = document.querySelector('#res');
+    let reg = /金三胖|妈的/g;
+
+        input.onclick = function(){
+          let newvue = area.value.replace(reg,'***');
+          res.innerText = newvue
+        }
+        // input.onclick = function(){
+        //    let newVue = area.value.replace(reg,'*');
+        //    res.innerText = newVue;
+        // }
+    </script>
+</body>
+</html>

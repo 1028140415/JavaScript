@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #fa{
+        width: 600px;
+        height: 600px;
+        border: 1px solid red;
+    }
+    #fa>div{
+        width: 33%;
+        height: 33%;
+        border: 1px solid red;
+        float: left;
+        line-height: 200px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #start{
+        cursor: pointer;
+        background-color: pink;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="fa">
+        <div class="option">刘诗诗</div>
+        <div class="option">范冰冰</div>
+        <div class="option">赵丽颖</div>
+        <div class="option">如花</div>
+        <div id="start">开始抽老婆</div>
+        <div class="option">迪丽热巴</div>
+        <div class="option">古力娜扎</div>
+        <div class="option">苍井空</div>
+        <div class="option">邓紫棋</div>
+    </div>
+
+    <script>
+            let but = document.getElementById('start');
+                //let options = document.querySelector('.option');
+            let options = document.getElementsByClassName('option');
+            let timer = null;
+            but.onclick = function(){
+                let num = 0;
+                if(timer == null){
+                    timer =  setInterval(() => {
+                    num++;
+
+
+                  let ran =  Math.round(Math.random()*(7-0)+0);
+                  //console.log(ran);
+                  for(let i = 0;i<options.length;i++){
+                    options[i].style.backgroundColor = '#fff';
+                  }
+                  options[ran].style.backgroundColor = 'red';
+                  //options[ran].style.backgroundColor = 'red';
+                  if(num>=20){
+                    clearInterval(timer);
+                    timer = null;
+                  }
+
+
+
+                }, 100);
+                }
+              
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #code{
+        width: 100px;
+        height: 100px;
+        background-color: #ddd;
+        padding: 10px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 20px;
+        color: red;
+        font-weight: bold;
+    }
+    input{
+        outline: none;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="code"></div>
+    <input type="text" name="" id="newCode">
+    <input type="button" name="" id="validate" value='验证'>
+
+
+    <script>
+        window.onload = function(){
+            var code;
+            var codeDiv = document.getElementById('code');
+            var newCodeInput = document.getElementById('newCode');
+            var validate = document.getElementById('validate');
+            creatCode();
+            function random(max,min){
+                return Math.floor(Math.random()*(max-min)+min);
+            }
+            function creatCode(){
+                code = '';
+                var codeLength = 4;
+                var randomCode = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                for(var i = 0;i < codeLength;i++){
+                    var index = random(0,36);
+                     code += randomCode[index];
+                }
+                codeDiv.innerHTML = code;
+            }
+            validate.onclick = function(){
+                var newCode = newCodeInput.value.toUpperCase();
+                if(newCode === code){
+                    window.location.href = 'https://www.apeland.cn';
+                }else{
+                    alert('验证码不正确，请重新输入');
+                    newCodeInput.value = '';
+
+                    creatCode();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 280px;
+        background-color: #eee;
+        margin:  0 auto;
+    }
+    button{
+        margin: 30px 25px;
+    }
+</style>
+<body>
+        <div>
+            <p>商品：web前端课程</p>
+            <p>原价：1920元</p>
+            <p>现价：1.190元</p>
+            <p>内容：html css</p>
+            <p>地址：广州市花都区</p>
+            <button>取消</button>
+            <button>支付</button>
+    
+        </div>
+       
+        <script>
+        document.getElementsByTagName('button')[1].onclick = function(){
+           let res = window.confirm('你确定吗');
+            if(res){
+                location.href = './scr.html'
+            }
+        }
+        
+        </script>
+</body>
+</html>

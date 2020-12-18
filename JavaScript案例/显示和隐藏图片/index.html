@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">隐藏</button>
+    <!-- <button id="btn1">显示</button> -->
+    <img src="img/1.jpeg" alt="" id="new" height="200px" width="350px">
+
+    <script>
+        //1
+    let obtn = document.getElementById('btn');
+    //let obtn1 = document.querySelector('#btn1');
+    let newImg = document.getElementsByTagName('img')[0];
+    //let isShow = true;
+
+        obtn.onclick = function(){
+            // if(isShow){
+            //     newImg.style.display = 'none';
+            //     obtn.innerHTML = '显示';
+            //     isShow = false;
+            // }else{
+            //     newImg.style.display = 'block';
+            //     obtn.innerHTML = '隐藏';
+            //     isShow = true;
+            // }
+            if(obtn.innerHTML === '隐藏'){
+                newImg.style.display = 'none';
+                obtn.innerHTML = '显示';
+                //isShow = false;
+            }else{
+                newImg.style.display = 'block';
+                obtn.innerHTML = '隐藏';
+                isShow = true;
+            }
+
+
+        }
+        // obtn1.onclick = function(){
+        //     newImg.style.display = 'block'
+        // }
+    </script>
+</body>
+</html>
